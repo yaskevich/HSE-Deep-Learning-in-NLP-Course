@@ -1,4 +1,4 @@
-from tqdm import tqdm
+from tqdm import tqdm_notebook as tqdm
 from matplotlib import pyplot as plt
 import numpy as np
 from .tools import binary_accuracy, multi_class_f1
@@ -35,7 +35,7 @@ class Wrapper:
                 epoch_accuracies = []
                 epoch_accuracies_test = []
 
-                progress_bar = tqdm(total=train_loader.dataset.data.shape[0], desc='Epoch {}'.format(n_epoch + 1))
+                progress_bar = tqdm(total=train_loader.dataset.data.shape[0], desc='Epoch {}'.format(n_epoch + 1), position=0)
 
                 for batch in train_loader:
 
